@@ -4,7 +4,7 @@
 
 Name:           linux-hello
 Version:        0.1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Windows Hello-style facial authentication for Linux using OpenCV and PAM
 
 License:        Apache-2.0 AND MIT
@@ -138,9 +138,11 @@ fi
 %ghost %verify(not md5 size mode mtime) %{_sharedstatedir}/selinux/%{selinuxtype}/active/modules/200/%{modulename}
 
 %changelog
+* Tue Nov 10 2026 Max Enelund <max@ig4.se> - 0.1.1-2
+- Add SELinux policy subpackage with a dedicated socket type and relabel helper
+
 * Tue Nov 10 2026 Max Enelund <max@ig4.se> - 0.1.1-1
 - Initial Copr package based on upstream spec
-- Add SELinux policy subpackage with a dedicated socket type and relabel helper
 
 * Sun Oct 25 2026 Nikolai <kennycoder@users.noreply.github.com> - 0.1.0-1
 - Initial RPM release
