@@ -1,0 +1,12 @@
+{
+  "packages": [
+    {
+      "name": "linux-hello",
+      "upstream": "kennycoder/linux-hello",
+      "spec": "linux-hello/linux-hello.spec",
+      "copr_project": "rpm-packages",
+      "copr_package": "linux-hello",
+      "tag_prefix": "v"
+    }
+  ]
+}
