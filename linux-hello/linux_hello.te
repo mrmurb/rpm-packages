@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+policy_module(linux_hello, 1.0)
+
+type linux_hello_var_run_t;
+files_pid_file(linux_hello_var_run_t)
+
+gen_require(`
+    type xdm_t;
+')
+
+allow xdm_t linux_hello_var_run_t:sock_file { getattr read write };
+allow xdm_t linux_hello_var_run_t:unix_stream_socket { connectto read write };

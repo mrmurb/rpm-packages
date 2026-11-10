@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+# linux-hellod creates the socket after it starts. Wait briefly for it,
+# then apply the file context from the linux_hello SELinux module.
+for _ in $(seq 1 600); do
+    [ -S /run/linux-hello.sock ] && break
+    sleep 0.1
+done
+
+exec /usr/bin/restorecon /run/linux-hello.sock

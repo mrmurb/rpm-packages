@@ -1,0 +1,1 @@
+/run/linux-hello\.sock -- gen_context(system_u:object_r:linux_hello_var_run_t,s0)
