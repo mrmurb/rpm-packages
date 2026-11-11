@@ -22,12 +22,12 @@ jobs:
       COPR_CONFIG: ${{ secrets.COPR_CONFIG }}
       PACKAGER: ${{ vars.PACKAGER || 'Max Enelund <max@ig4.se>' }}
     steps:
+      - name: Install tools
+        run: dnf -y install copr-cli gh git python3 rpm-build rpmdevtools
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Install tools
-        run: dnf -y install copr-cli gh git python3 rpm-build rpmdevtools
 
       - name: Configure git
         run: |
